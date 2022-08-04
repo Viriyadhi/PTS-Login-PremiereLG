@@ -19,7 +19,7 @@ class _RegisterState extends State<Register> {
   final TextEditingController _passwordController1 = TextEditingController();
   final TextEditingController _passwordController2 = TextEditingController();
 
-  void _login() {
+  void _register() {
     if (_formKey.currentState!.validate()) {
       if (_passwordController1.text == _passwordController2.text) {
         SharedCode.showSnackBar(context, 'success', 'Account created.');
@@ -98,7 +98,7 @@ class _RegisterState extends State<Register> {
             isPassword: true,
           ),
           const SizedBox(height: 25.0),
-          ElevatedButton(onPressed: _login, child: const Text('CREATE ACCOUNT')),
+          ElevatedButton(onPressed: _register, child: const Text('CREATE ACCOUNT')),
           const SizedBox(height: 25.0),
           GestureDetector(
             onTap: () {
