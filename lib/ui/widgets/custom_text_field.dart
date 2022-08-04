@@ -26,13 +26,33 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
+  final FocusNode _focusNode = FocusNode();
+  TextStyle? _textStyle;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _focusNode.addListener(() {
+      setState(() {
+        if (_focusNode.hasFocus) {
+          _textStyle = GoogleFonts.lato(fontSize: 14.0, fontWeight: FontWeight.w600, color: ColorValues.primaryGreen);
+        } else {
+          _textStyle = Theme.of(context).textTheme.bodyText1;
+        }
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     dynamic validator = widget.validator;
-    validator ?? SharedCode().emptyValidator;
+    validator ??= SharedCode().emptyValidator;
 
     return TextFormField(
-      style: Theme.of(context).textTheme.bodyText1,
+      focusNode: _focusNode,
+      style: _textStyle ?? Theme.of(context).textTheme.bodyText1,
       controller: widget.controller,
       keyboardType: widget.textInputType,
       validator: validator,
@@ -43,17 +63,17 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: InputDecoration(
         border: InputBorder.none,
         contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
+        alignLabelWithHint: true,
         label: Text(widget.label.toUpperCase()),
         labelStyle: GoogleFonts.lato(
           color: ColorValues.mediumGrey,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           letterSpacing: 0.2,
         ),
         prefixIcon: Padding(
-          padding: const EdgeInsets.only(top: 15.0),
-          child: Icon(widget.prefixIcon, size: 18.0),
+          padding: const EdgeInsets.only(top: 12.0),
+          child: Icon(widget.prefixIcon),
         ),
-        alignLabelWithHint: true
       ),
     );
   }
