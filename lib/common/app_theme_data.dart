@@ -21,29 +21,35 @@ class AppThemeData {
     final MaterialColor primaryMaterialColor = MaterialColor(primaryColor.value, primaryColorMap);
 
     return ThemeData(
-        brightness: Brightness.light,
-        primaryColor: primaryColor,
-        primarySwatch: primaryMaterialColor,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            onPrimary: Colors.white,
-            primary: ColorValues.primaryGreen,
-            elevation: 0.0,
-            minimumSize: const Size(double.infinity, 45.0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(3),
-            ),
-            textStyle: GoogleFonts.lato(
-              fontSize: 14.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 1.0,
-            ),
+      canvasColor: Colors.white,
+      brightness: Brightness.light,
+      primaryColor: primaryColor,
+      primarySwatch: primaryMaterialColor,
+      appBarTheme: const AppBarTheme(
+        color: Colors.white,
+        elevation: 0.0,
+        iconTheme: IconThemeData(color: ColorValues.primaryGreen),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          onPrimary: Colors.white,
+          primary: ColorValues.primaryGreen,
+          elevation: 0.0,
+          minimumSize: const Size(double.infinity, 45.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(3),
+          ),
+          textStyle: GoogleFonts.lato(
+            fontSize: 14.0,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.0,
           ),
         ),
-        textTheme: TextTheme(
-          headline1: GoogleFonts.lato(fontSize: 24.0, fontWeight: FontWeight.w900, color: Colors.black),
-          subtitle1: GoogleFonts.lato(fontSize: 14.0, fontWeight: FontWeight.w500, color: ColorValues.mediumGrey),
-          bodyText1: GoogleFonts.lato(fontSize: 14.0, fontWeight: FontWeight.w400, color: Colors.black),
-        ));
+      ),
+      textTheme: TextTheme(
+        headline1: GoogleFonts.lato(fontSize: 24.0, fontWeight: FontWeight.w900, color: Colors.black),
+        subtitle1: GoogleFonts.lato(fontSize: 14.0, fontWeight: FontWeight.w500, color: ColorValues.mediumGrey),
+        bodyText1: GoogleFonts.lato(fontSize: 14.0, fontWeight: FontWeight.w400, color: Colors.black),
+      ));
   }
 }

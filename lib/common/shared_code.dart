@@ -14,12 +14,9 @@ class SharedCode {
     return !emailValid ? 'Email is not valid' : null;
   }
 
-  String? passwordConfirmValidator(String value1 , String value2) {
-    if (value1.isEmpty || value2.isEmpty) {
-      return 'Password doesn\'t match';
-    } else {
-      return value2 != value1 ? 'Password doesn\'t match' : null;
-    }
+  String? phoneValidator(value) {
+    bool phoneValid = RegExp(r'^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$').hasMatch(value);
+    return !phoneValid ? 'Phone number is not valid' : null;
   }
 
   static void showSnackBar(
