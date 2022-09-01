@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_practice/common/color_values.dart';
-import 'package:flutter_login_practice/common/shared_code.dart';
-import 'package:flutter_login_practice/ui/register/register.dart';
-import 'package:flutter_login_practice/ui/widgets/custom_text_field.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../common/color_values.dart';
+import '../../common/shared_code.dart';
+import '../register/register.dart';
+import '../widgets/custom_text_field.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);

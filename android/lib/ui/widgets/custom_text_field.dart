@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_practice/common/color_values.dart';
-import 'package:flutter_login_practice/common/shared_code.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../common/color_values.dart';
+import '../../common/shared_code.dart';
 
 class CustomTextField extends StatefulWidget {
   final String label;

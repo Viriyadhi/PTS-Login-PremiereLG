@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_practice/common/app_theme_data.dart';
-import 'package:flutter_login_practice/ui/login/login.dart';
+import 'common/app_theme_data.dart';
+import 'ui/login/login.dart';
 
 void main() {
   runApp(const MyApp());
